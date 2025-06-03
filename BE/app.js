@@ -2,8 +2,23 @@ const express=require("express")
 const app=express()
 require("dotenv").config()
 const cors=require("cors")
+const loginRouter=require('./routes/loginRouter')
+const saleRouter=require('./routes/saleRouter')
+const userRouter=require('./routes/userRouter')
+const buyRouter=require('./routes/buyRouter')
+const productRouter=require('./routes/productRouter')
+const corsOption=require('./config/corsOptions')
 const DBconnection=require('./config/DBconnect')
 DBconnection()
+app.use(cors(corsOption))
+app.use(express.json())
+app.use(express.static("public"))
+app.use('/buys',buyRouter)
+app.use('/users',userRouter)
+app.use('/products',productRouter)
+app.use('/login',loginRouter)
+app.use('/sales',saleRouter)
+
 app.listen( () => {
   console.log(`app in running at port ${process.env.PORT}`);
 });
