@@ -25,7 +25,7 @@ const login = async (req, res) => {
     const accessToken = jwt.sign(userInfo, process.env.ACCESS_TOKEN_SECRET)
     res.json({ accessToken: accessToken, user: userInfo })
 }
-const register= async(req, res)=>{
+const registerUser= async(req, res)=>{
       try {
         const result = await User.create(req.body);
         res.status(201).json({ message: 'User created successfully' });
@@ -37,4 +37,29 @@ const register= async(req, res)=>{
         next(error);
     }
 }
-module.exports={login,register}
+const register=async(req,res)=>{
+    const {name,email,phone,_id, password,address,allBuys,FavoriteProducts}=req.body
+    if (!name||!password||!email||!phone||!address||!allBuys||!FavoriteProducts)
+         return res.status(400).json({message: "please fill all the required parameters"})  
+    const duplicate=await User.findOne({password}).lean()
+    if (duplicate)
+        return res.status(409).json({message: "duplicated user name"})
+    const hashpwd=await bcrypt.hash(password,10)
+    const userObject={name,email,phone,_id, password: hashpwd,address,allBuys,FavoriteProducts, }
+    const user=await User.create(userObject)
+    if (!user)
+      return res.status(400).json({message: "invalid user received"})
+   const userInfo = {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        password: user.password,
+        address: user.address,
+        allBuys: user.allBuys,
+        FavoriteProducts: user.FavoriteProducts
+    }
+    const accessToken=jwt.sign(userInfo,process.env.ACCESS_TOKEN_SECRET)
+    return res.status(201).json({accessToken:accessToken, user:userInfo})
+}
+module.exports={login,registerUser,register}
