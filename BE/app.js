@@ -7,6 +7,7 @@ const saleRouter=require('./routes/saleRouter')
 const userRouter=require('./routes/userRouter')
 const buyRouter=require('./routes/buyRouter')
 const productRouter=require('./routes/productRouter')
+const cityRouter=require('./routes/cityRouter')
 const corsOption=require('./config/corsOptions')
 const DBconnection=require('./config/DBconnect')
 DBconnection()
@@ -18,7 +19,7 @@ app.use('/users',userRouter)
 app.use('/products',productRouter)
 app.use('/login',loginRouter)
 app.use('/sales',saleRouter)
-
+app.use('/cities',cityRouter)
 app.listen( () => {
   console.log(`app in running at port ${process.env.PORT}`);
 });
