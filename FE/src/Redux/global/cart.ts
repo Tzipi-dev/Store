@@ -1,22 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Found } from "../../interfaces/models";
-const initialState: { allFounds: Found[] } = {
-    allFounds: [],
+import type { Cart, Product } from "../../interfaces/interfaces";
+import type { RootState } from "@reduxjs/toolkit/query";
+
+
+const initialState: Cart = {
+  products: [],
 };
 
-const foundSlice = createSlice({
-    name: "founds",
-    initialState,
-    reducers: {
-        setAllFounds: (state, action) => {
-            state.allFounds = action.payload
-        },
-        addFound: (state, action) => {
-            state.allFounds.push(action.payload)
-        }
+const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    addProduct: (state, action) => {
+      state.products.push(action.payload);
+    },
+    clearCart: (state) => {
+      state.products = [];
     }
-})
-export const { setAllFounds ,addFound} = foundSlice.actions
-export const selectFounds = (state:{foundsArray:Found[]} )=>
-  state.foundsArray
-export default foundSlice.reducer
+  },
+});
+
+export const { addProduct, clearCart } = cartSlice.actions;
+
+// סלקטור מומלץ
+export const selectCart = (state: Cart) => state.products;
+
+export default cartSlice.reducer;
