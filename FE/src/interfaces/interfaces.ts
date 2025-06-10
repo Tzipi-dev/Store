@@ -10,7 +10,7 @@ export interface Product{
     rating: Number,
     amountOfBuys: Number,
     description: String,
-    comments: [String],
+    comments?: [String],
     category: {
         type: String,
         enum: ['עגילים', 'צמידים', 'שעונים', 'שרשראות', 'טבעות']
@@ -19,9 +19,8 @@ export interface Product{
         type: String,
         enum: ['כסף', 'זהב']
     },
-    sales: [{
+    sales?: [{
         type: ObjectId
-        ref: 'Sale'
     }],
     imageUrl: String,
     dateOfStart: Date,
