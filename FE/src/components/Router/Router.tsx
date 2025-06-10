@@ -25,11 +25,12 @@ const Router = () => {
       <NavLink to="/" style={linkStyle} onClick={toggleDrawer(true)}>
         <CiShoppingCart />
       </NavLink>
-      <Drawer open={open} onClose={toggleDrawer(false)}>
+      <Drawer open={open} onClose={toggleDrawer(false)} >
         <Box
           role="presentation"
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
+          sx={{width: "15vw"}}
         >
           <List>
             {cart?.length ? (
