@@ -1,11 +1,12 @@
 import type { ObjectId } from "mongoose"
 
-export interface Cart{
+export interface Cart {
     products: Product[]
 }
 
-export interface Product{
- name: String,
+export interface Product {
+    _id?: string
+    name: String,
     price: Number,
     rating: Number,
     amountOfBuys: Number,
