@@ -13,6 +13,9 @@ const Main = () => {
           width: "49.5vw",
           height: "50vw",
           overflow: "hidden",
+
+
+          
           cursor: "pointer",
           filter: hoveredItem === index ? "brightness(70%)" : "none",
           transition: "filter 0.3s ease",
