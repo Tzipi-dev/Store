@@ -8,6 +8,7 @@ products_collection = db.products
 @router.get("/")
 async def get_all_products():
     try:
+        print("Fetching all products")
         cursor = products_collection.find()
         products = []
         async for product in cursor:

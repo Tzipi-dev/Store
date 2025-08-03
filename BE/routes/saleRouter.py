@@ -9,7 +9,7 @@ from controllers.saleController import (
 from middlewares.verifyJWT import verify_jwt
 
 router = APIRouter(
-    prefix="/sales",
+    # prefix="/sales",
     tags=["sales"]
 )
 

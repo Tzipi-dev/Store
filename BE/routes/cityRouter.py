@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from controllers.cityController import get_all_cities_in_israel
 
 router = APIRouter(
-    prefix="/cities",
+    # prefix="/cities",
     tags=["cities"]
 )
 

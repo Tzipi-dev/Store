@@ -6,15 +6,16 @@ from controllers.productController import (
     update_product,
     get_product_by_id
 )
-from middlewares.verifyJWT import verify_jwt
+# from middlewares.verifyJWT import verify_jwt
 
 router = APIRouter(
-    prefix="/products",
+    # prefix="/products",
     tags=["products"]
 )
 
 @router.get("/")
 async def route_get_all_products():
+   
     return await get_all_products()
 
 @router.post("/")

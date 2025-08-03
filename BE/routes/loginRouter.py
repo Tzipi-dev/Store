@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from controllers.authController import login
 
 router = APIRouter(
-    prefix="/auth",
+    # prefix="/auth",
     tags=["auth"]
 )
 
