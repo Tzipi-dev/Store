@@ -4,7 +4,7 @@ export const NavStyle: CSSProperties = {
     width: "100vw",
     height: "8vh",
     color: "black",
-    borderBottom: '2px solid pink',
+    // borderBottom: '2px solid pink',
     top: "8vh",
     display: "flex",
     justifyContent: "space-evenly",
@@ -12,7 +12,8 @@ export const NavStyle: CSSProperties = {
     backgroundColor: 'white',
     fontWeight: "100",
     fontFamily: "Calibri",
-    fontSize: "2.5vh"
+    fontSize: "2.5vh",
+   
 
 }
 export const linkStyle: CSSProperties={
