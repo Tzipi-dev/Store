@@ -68,6 +68,8 @@ const Main = () => {
           flexWrap: "wrap",
           width: "100%",
           margin: 0,
+
+          
           padding: 0,
           overflowX: "hidden",
           justifyContent: "space-between",
