@@ -11,7 +11,8 @@ export const headerStyle: CSSProperties={
     paddingTop: "1.5vh",
     fontFamily: "Freestyle Script",
     fontSize: "5vh",
-    fontWeight: "100"
+    fontWeight: "100",
+   
 }
 export const spanKav: CSSProperties={
     color: "pink"
