@@ -13,6 +13,9 @@ const Main = () => {
           width: "49.5vw",
           height: "50vw",
           overflow: "hidden",
+
+
+          
           cursor: "pointer",
           filter: hoveredItem === index ? "brightness(70%)" : "none",
           transition: "filter 0.3s ease",
@@ -65,6 +68,8 @@ const Main = () => {
           flexWrap: "wrap",
           width: "100%",
           margin: 0,
+
+          
           padding: 0,
           overflowX: "hidden",
           justifyContent: "space-between",
