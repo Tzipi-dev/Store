@@ -10,7 +10,7 @@ from controllers.authController import register
 from middlewares.verifyJWT import verify_jwt
 
 router = APIRouter(
-    prefix="/users",
+    # prefix="/users",
     tags=["users"]
 )
 

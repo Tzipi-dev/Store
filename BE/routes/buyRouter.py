@@ -9,7 +9,7 @@ from controllers.buyController import (
 from middlewares.verifyJWT import verify_jwt
 
 router = APIRouter(
-    prefix="/buys",  # אפשר לשנות לפי הצורך
+    # prefix="/buys",  # אפשר לשנות לפי הצורך
     tags=["buys"]
 )
 

@@ -1,9 +1,9 @@
 import { items } from "../../data/containers";
-import { useState } from "react";
+import {  useState } from "react";
+
 
 const Main = () => {
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
-
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
       {/* קונטיינר ראשון: items 0 ו־1 */}

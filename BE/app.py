@@ -18,7 +18,7 @@ async def startup_db_client():
     global db_client, db
     db_client = await connect_db()
     if db_client:
-        db = db_client.your_database_name  # שנה לשם מסד הנתונים שלך
+        db = db_client.Store  # שנה לשם מסד הנתונים שלך
     else:
         print("Failed to connect to MongoDB")
 
